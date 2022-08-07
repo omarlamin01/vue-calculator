@@ -1,12 +1,25 @@
 <template>
   <div class="calculator">
     <div class="display">434555</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
+    <div class="btn">C</div>
+    <div class="btn">+/-</div>
+    <div class="btn">%</div>
+    <div class="operator btn">/</div>
+    <div class="btn">7</div>
+    <div class="btn">8</div>
+    <div class="btn">9</div>
+    <div class="operator btn">x</div>
+    <div class="btn">4</div>
+    <div class="btn">5</div>
+    <div class="btn">6</div>
+    <div class="operator btn">-</div>
+    <div class="btn">1</div>
+    <div class="btn">2</div>
+    <div class="btn">3</div>
+    <div class="operator btn">+</div>
+    <div class="btn zero">0</div>
+    <div class="btn">.</div>
+    <div class="operator btn">=</div>
   </div>
 </template>
 
@@ -22,5 +35,25 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-columns: minmax(50px, auto);
+  font-size: 40px;
+}
+
+.display {
+  background-color: red;
+  grid-column: 1/5;
+}
+
+.zero {
+  grid-column: 1/3;
+}
+
+.btn {
+  background-color: #eee;
+  border: 1px solid;
+}
+
+.operator {
+  background-color: orange;
+  color: white;
 }
 </style>
