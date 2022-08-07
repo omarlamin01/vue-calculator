@@ -36,10 +36,13 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-auto-columns: minmax(50px, auto);
   font-size: 40px;
+  width: 280px;
+  margin: 0 auto;
 }
 
 .display {
-  background-color: red;
+  background-color: #333;
+  color: white;
   grid-column: 1/5;
 }
 
@@ -49,7 +52,9 @@ export default {
 
 .btn {
   background-color: #eee;
-  border: 1px solid;
+  color: #212121;
+  border: #212121 1px solid;
+  cursor: pointer;
 }
 
 .operator {
