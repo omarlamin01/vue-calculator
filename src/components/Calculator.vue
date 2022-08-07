@@ -61,29 +61,43 @@ export default {
     },
     divide() {
       this.operator = (a, b) => {
-        a / b;
+        return a / b;
       };
       this.setPrevious();
     },
     times() {
       this.operator = (a, b) => {
-        a * b;
+        return a * b;
       };
       this.setPrevious();
     },
     minus() {
       this.operator = (a, b) => {
-        a - b;
+        return a - b;
       };
       this.setPrevious();
     },
     add() {
       this.operator = (a, b) => {
-        a + b;
+        return a + b;
       };
       this.setPrevious();
     },
-    equal() {},
+    equal() {
+      console.log("prev: " + this.previous);
+      console.log("curr: " + this.current);
+      console.log("oprt: " + this.operator);
+      console.log("status: " + this.operatorClicked);
+      if (this.operatorClicked) {
+        this.current = this.operator(
+          parseFloat(this.previous),
+          parseFloat(this.current)
+        ).toString();
+        this.previous = null;
+        this.operator = null;
+        this.operatorClicked = false;
+      }
+    },
   },
 };
 </script>
