@@ -1,8 +1,8 @@
 <template>
   <div class="calculator">
-    <div class="display">434555</div>
-    <div class="btn">C</div>
-    <div class="btn">+/-</div>
+    <div class="display">{{ display || 0 }}</div>
+    <div class="btn" @click="clear">C</div>
+    <div class="btn" @click="sign">+/-</div>
     <div class="btn">%</div>
     <div class="operator btn">/</div>
     <div class="btn">7</div>
@@ -26,6 +26,21 @@
 <script>
 export default {
   name: "multi-word",
+  data() {
+    return {
+      display: "123",
+    };
+  },
+  methods: {
+    clear() {
+      this.display = "";
+    },
+    sign() {
+      this.display.charAt(0) === "-"
+        ? this.display.slice(1)
+        : (this.display = "-" + this.display);
+    },
+  },
 };
 </script>
 
