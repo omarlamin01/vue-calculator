@@ -18,7 +18,7 @@
     <div class="btn" @click="append(3)">3</div>
     <div class="operator btn">+</div>
     <div class="btn zero" @click="append(0)">0</div>
-    <div class="btn" @click="append('.')">.</div>
+    <div class="btn" @click="dot">.</div>
     <div class="operator btn">=</div>
   </div>
 </template>
@@ -45,6 +45,11 @@ export default {
     },
     append(number) {
       this.display = this.display + number;
+    },
+    dot() {
+      if (this.display.indexOf(".") === -1) {
+        this.display = this.display + ".";
+      }
     },
   },
 };
