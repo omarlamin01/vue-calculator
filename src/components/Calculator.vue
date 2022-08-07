@@ -84,10 +84,6 @@ export default {
       this.setPrevious();
     },
     equal() {
-      console.log("prev: " + this.previous);
-      console.log("curr: " + this.current);
-      console.log("oprt: " + this.operator);
-      console.log("status: " + this.operatorClicked);
       if (this.operatorClicked) {
         this.current = this.operator(
           parseFloat(this.previous),
