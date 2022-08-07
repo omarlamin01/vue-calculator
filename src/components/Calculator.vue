@@ -4,19 +4,19 @@
     <div class="btn" @click="clear">C</div>
     <div class="btn" @click="sign">+/-</div>
     <div class="btn" @click="percent">%</div>
-    <div class="operator btn">/</div>
+    <div class="operator btn" @click="divide">/</div>
     <div class="btn" @click="append(7)">7</div>
     <div class="btn" @click="append(8)">8</div>
     <div class="btn" @click="append(9)">9</div>
-    <div class="operator btn">x</div>
+    <div class="operator btn" @click="times">x</div>
     <div class="btn" @click="append(4)">4</div>
     <div class="btn" @click="append(5)">5</div>
     <div class="btn" @click="append(6)">6</div>
-    <div class="operator btn">-</div>
+    <div class="operator btn" @click="minus">-</div>
     <div class="btn" @click="append(1)">1</div>
     <div class="btn" @click="append(2)">2</div>
     <div class="btn" @click="append(3)">3</div>
-    <div class="operator btn">+</div>
+    <div class="operator btn" @click="add">+</div>
     <div class="btn zero" @click="append(0)">0</div>
     <div class="btn" @click="dot">.</div>
     <div class="operator btn">=</div>
@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       display: "123",
+      operator: null,
     };
   },
   methods: {
@@ -50,6 +51,26 @@ export default {
       if (this.display.indexOf(".") === -1) {
         this.display = this.display + ".";
       }
+    },
+    divide() {
+      this.operator = (a, b) => {
+        a / b;
+      };
+    },
+    times() {
+      this.operator = (a, b) => {
+        a * b;
+      };
+    },
+    minus() {
+      this.operator = (a, b) => {
+        a - b;
+      };
+    },
+    add() {
+      this.operator = (a, b) => {
+        a + b;
+      };
     },
   },
 };
