@@ -1,5 +1,13 @@
 <template>
-  <div class="calculator"></div>
+  <div class="calculator">
+    <div class="display">434555</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+  </div>
 </template>
 
 <script>
