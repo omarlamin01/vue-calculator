@@ -3,7 +3,7 @@
     <div class="display">{{ display || 0 }}</div>
     <div class="btn" @click="clear">C</div>
     <div class="btn" @click="sign">+/-</div>
-    <div class="btn">%</div>
+    <div class="btn" @click="percent">%</div>
     <div class="operator btn">/</div>
     <div class="btn">7</div>
     <div class="btn">8</div>
@@ -37,8 +37,11 @@ export default {
     },
     sign() {
       this.display.charAt(0) === "-"
-        ? this.display.slice(1)
+        ? (this.display = this.display.slice(1))
         : (this.display = "-" + this.display);
+    },
+    percent() {
+      this.display = parseFloat(this.display) / 100;
     },
   },
 };
